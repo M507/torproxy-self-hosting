@@ -1,0 +1,12 @@
+version: '3.8'  
+
+services:
+  torproxy:
+    image: dperson/torproxy
+    command: -b 100
+    ports:
+      - "8118:8118"  # Maps TCP port 8118 on the container to TCP port 8118 on the host
+      - "9050:9050"  # Maps TCP port 9050 on the container to TCP port 9050 on the host
+    tty: true
+    stdin_open: true
+    restart: always
